@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="StyleDashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloock&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloock&display=swap" rel="stylesheet">
+    <script src="cadastro.js"></script>
+    <script src="usuarios.js"></script>
+    <script src="CRUDempresa.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloock&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloock&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+      
+<body>
+    <div class="container" id="pai">
+        <div class="lateral">
+          <div class="contLat">
+            <div class="userCont">
+                <div class="profilePai">
+                    <img src="./assets/gray-user-profile-icon-png-fP8Q1P.png" alt="" class="profile">
+                </div>
+                <p class="textoDefault">Olá, usuario</p>
+            </div>
+            <div  onclick="modalUm()"  class="botaoAcesso" id="botaoUm"><p class="textoDefault">Dashboard</p> </div>
+            <div  onclick="modalDois()" class="botaoAcesso"  id="botaoDois"><p class="textoDefault">Filtro</p> </div>
+            <div  onclick="modalTres()" class="botaoAcesso" id="botaoTres"><p class="textoDefault" >Clima</p> </div>
+          </div>
+          <div class="iconAlert"></div>
+          <div class="contLat">
+           
+            <div onclick="modalCinco()" class="botaoAcesso"  id="botaoCinco"><p class="textoDefault">Configurações</p> </div>
+            <div  onclick="modalSeis()" class="botaoAcesso" id="botaoSeis"><p class="textoDefault" >Sair</p> </div>
+          </div>
+
+        </div>
+        <div class="conteudo" id="conteudoUm" >
+            <div class="conjuntoKPI" style="font-size: 22px;">
+                <div class="kpi" style="width:calc((100% / 2 ))"><h2  id="piorEmpresa">TAM</h2><h1>Empresa com pior desempenho</h1> <h1 id="dadosEmpresa"></h1></div>
+                <div class="kpi" style="width:calc((100% / 2 ))"><h2  id="piorAeroporto">GOL</h2><h1>Aeroporto com pior desempenho</h1> <h1 id="dadosAeroporto"></h1></div>
+               
+            </div>
+           <div class="conjuntoFinal">
+            <div class="dashAlign">
+              <p class="sub" style="font-weight: 500;">Teste de label</p>
+<div class="conjuntoDashboard" style="flex-direction: row; gap: 0;" >
+  <div class="dashAreasDois" style="border-radius: 0;">
+    <canvas style="width: 600px; border-radius: 0;" class="grafic" id="myChart"></canvas>
+
+  </div>
+<div class="dashAreasDois" style="border-radius: 0;">
+  <canvas style="width: 600px; border-radius: 0;" class="grafic" id="myChartDois"></canvas>
+
+</div>
+</div>
+            </div>
+            <div class="dashAlign">
+              <p class="sub" style="font-weight: 500;">Teste de label</p>
+
+            <div class="conjuntoDashboard"  style="flex-direction: row;" >
+              <div class="dashAreasDois">
+                <canvas style="width: 600px;" class="grafic" id="myChartTres"></canvas>
+
+              </div>
+            <div class="dashAreasDois">
+              <canvas style="width: 600px;" class="grafic" id="myChartQuatro"></canvas>
+
+            </div>
+          </div>
+        </div>
+           
+         
+           </div>
+        </div>
+        <div class="conteudo dis" id="conteudoDois">
+          <div class="conjuntoKPI" style="justify-content: space-around;">
+            <div class="kpi" style="width:calc((100% / 2 ) - 0.5rem);"><h1>Clima São Paulo: <br>Tempestade</h1></div>
+            <div class="kpi" style="width:calc((100% / 2 ) - 0.5rem);"><h1>Clima Ceará: <br>Céu Limpo</h1></div>
+           
+        </div>
+       <div class="conjuntoFinal modify">
+        <div class="conjuntoDashboard alt">
+            <div style="align-items: start;" class="dashAreas codUm">
+                <div>
+                  </div>
+            </div>
+        <div class="kpiTotal">
+         
+        <table>
+            <tr>
+              <th class="titulos">Velocida do Vento</th>
+              <th class="titulos">São Paulo</th>
+              <th class="titulos">Ceará</th>
+            </tr>
+            <tr>
+              <td>25/10</td>
+              <td>8.24 km/h</td>
+              <td>3.73 km/h</td>
+            </tr>
+            <tr>
+              <td>26/10</td>
+              <td>8.24 km/h</td>
+              <td>3.73 km/h</td>
+            </tr>
+            <tr>
+              <td>27/10</td>
+              <td>7.52 km/h</td>
+              <td>2.83 km/h</td>
+            </tr>
+            <tr>
+              <td>28/10</td>
+              <td>8.75 km/h</td>
+              <td>5.70 km/h</td>
+            </tr>
+           
+         
+               
+              </table>
+            </div>
+            </div>
+            <div class="dashAreasDois" style="align-items: start;">
+                <div>
+                  </div>
+            </div>
+
+           </div>
+        </div>
+       
+        <div class="conteudo dis" id="conteudoQuatro" style="flex-direction: row;">
+         
+           <div class="conjuntoFinal">
+            <div class="conjuntoDashboard">
+                <div class="dashAreas" style="align-items: start; padding-left: 2rem;">
+                  <h1 class="titulin">Conselho da IA</h1>
+                  <p class="titulinho">A rota aérea São Paulo - Ceará conecta a capital paulista a Fortaleza, famosa por suas praias e cultura. O tempo de voo direto é de cerca de 3 horas e 30 minutos. Companhias como LATAM, Gol e Azul operam essa rota, partindo principalmente do Aeroporto Internacional de Guarulhos (GRU). O Aeroporto Pinto Martins (FOR) é o principal ponto de chegada em Fortaleza. A demanda é alta tanto para negócios quanto para turismo, especialmente na alta temporada. Reservas antecipadas e atenção às políticas de bagagem são recomendadas.
+
+
+
+                  </p>
+             
+                </div>
+                <div class="dashAreasDois" style="align-items: start; padding-left: 2rem;">
+                  <h1 class="titulin">Consideações finais</h1>
+                  <p class="titulinho">Com isso afirmo que tem rotas que precisam ser analisadas antes de tomar a decisâo final.</p>
+
+                </div>
+            </div>
+            <div class="kpiTotal" style="flex-direction: column; gap: 0.5rem; " >
+              <div class="kpi" style="width: calc(100% - 1rem); height: calc((100% / 4) - 0.5rem); flex-direction: column; gap: 8px; font-family:sans-serif;"><h1 class="titulin">Destaques</h1><p class="titulinho">destaque 1</p></div>
+              <div class="kpi" style="width: calc(100% - 1rem); height: calc((100% / 4) - 0.5rem); flex-direction: column; gap: 8px;font-family:sans-serif;"><h1 class="titulin">Destaques</h1><p class="titulinho">destaque 1</p></div>
+              <div class="kpi" style="width: calc(100% - 1rem); height: calc((100% / 4) - 0.5rem); flex-direction: column; gap: 8px;font-family:sans-serif;"><h1 class="titulin">Destaques</h1><p class="titulinho">destaque 1</p></div>
+              <div class="kpi" style="width: calc(100% - 1rem); height: calc((100% / 4) - 0.5rem); flex-direction: column; gap: 8px;font-family:sans-serif;"><h1 class="titulin">Destaques</h1><p class="titulinho">destaque 1</p></div>
+            </div>
+           </div>
+        </div>
+        <div class="conteudo dis" id="conteudoCinco">
+            <div class="conjuntoKPI" style="flex-direction: column;">
+                <div class="kpi"></div>
+                <div class="kpi"></div>
+                <div class="kpi"></div>
+                <div class="kpi"></div>
+
+       
+            </div>
+           <div class="conjuntoFinal">
+            <div class="conjuntoDashboard">
+                <div class="dashAreas" style="background-color: blue;"></div>
+                <div class="dashAreasDois"></div>
+            </div>
+            <div class="kpiTotal"></div>
+           </div>
+        </div>
+        <div class="conteudo dis" id="conteudoSeis">
+          <h1 class="tituloDA">Dados cadastrais</h1>
+           <div class="conjuntoFinal">
+            <div class="conjuntoDashboard" style="flex-direction: row;">
+                <div class="dashArea" style="background-color: rgba(0, 0, 255, 0); padding: 0; gap: 0.5rem; align-items: center; justify-content: center; display: flex; flex-direction: column; height: 100%; width: 100%;">
+                  <div class="changeMode"  onclick="empHidden()" style="border: 1px solid white;" ><p class="textoDefault">Empresa</p></div>
+                  <div class="hidden dis" id="empHidden" style="width: 50%;">
+                     <div class="changeMode list"  onclick="addEmp()" style="border: 1px solid white;" ><p class="textoDefault">Adicionar empresa</p></div>
+                  <div class="changeMode list" onclick="ediEmp(),listarDados()" style="border: 1px solid white;"><p class="textoDefault">Editar empresa</p></div>
+                  <div class="changeMode exclu" onclick="delEmp(),listarDados()" style="border: 1px solid white;"><p class="textoDefault" >Remover empresa</p></div>
+                  </div>
+                  <div class="changeMode"  onclick="userHidden(), listarDadosUsuario()" style="border: 1px solid white;" ><p class="textoDefault">Usuário</p></div>
+                  <div class="hidden dis" id="userHidden" style="width: 50%;">
+                     <div class="changeMode list" style="border: 1px solid white;"><p class="textoDefault" >Editar usuario</p></div>
+                  <div class="changeMode exclu"  onclick="delUser()" style="border: 1px solid white;"><p class="textoDefault">Remover usuário</p></div>
+
+                  </div>
+                 
+                </div>
+                <div class="dashAreasDois" style="color: #1d1d1d; height: 100%; width: 100%;">
+                  <div class="cadastroEmp" id="cadEmp">
+                    <h1 class="titulo">Adicionar empresa</h1>
+                    <div class="align">
+                        <div class="alignForm">
+                            <p>Nome Fantasia</p>
+                            <input type="text" class="ipt" id="input_nome_empresa_cadastro">
+                          </div>
+                          <div class="alignForm">
+                            <p>Razão Social</p>
+                            <input type="text" class="ipt" id="input_razao_social_cadastro">
+                          </div>
+                          <div class="alignForm">
+                            <p>CNPJ</p>
+                            <input type="text" class="ipt" id="input_cnpj_cadastro" maxlength="18" oninput="formatarCNPJ(this)">
+                          </div>
+                          <div class="alignForm">
+                            <p>Cidade</p>
+                            <input type="text" id="input_cidade_cadastro" class="ipt">
+                          </div>
+                          <div class="align">
+                            <div class="btnConfirmar" style="width: 100px; height: 35px; margin-top: 8px; cursor: pointer;"
+                              onclick="btnCadastroEmpresa()">
+                              <p>Enviar</p>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="cadastroEmp" id="editUser">
+                  <h1 class="titulo">Editar usuario</h1>
+                  <div class="align">
+                      <div class="alignForm">
+                          <p>Nome</p>
+                          <input type="text" class="ipt" id="input_nome_usuario_editar">
+                      </div>
+                      <div class="alignForm">
+                          <p>E-mail</p>
+                          <input type="text" id="input_email_usuario_editar" class="ipt">
+                      </div>
+                      <div class="align">
+                          <div class="btnConfirmar" id="btnEdit2" style="width: 100px; height: 35px; margin-top: 8px; cursor: pointer;" onclick="habilitarEdicaoUsuario()"><p>Editar</p></div>
+                      </div>
+
+                      <div class="btnConfirmar" id="btnEnviar2" style="display: none; width: 100px; height: 35px; margin-top: 8px; cursor: pointer;"
+                            onclick="enviarEdicaoUsuario()">
+                            <p>Enviar</p>
+                            </div>
+                  </div>
+              </div>
+                <div class="cadastroEmp" id="editEmp">
+                    <h1 class="titulo">Editar empresa</h1>
+                    <div class="align">
+                        <div class="alignForm">
+                          <p>Nome Fantasia</p>
+                          <input type="text" class="ipt" id="input_nome_empresa_editar">
+                        </div>
+                        <div class="alignForm">
+                          <p>Razão Social</p>
+                          <input type="text" class="ipt" id="input_razao_social_editar">
+                        </div>
+                        <div class="alignForm">
+                          <p>CNPJ</p>
+                          <input type="text" class="ipt" id="input_cnpj_editar" maxlength="18" oninput="formatarCNPJ(this)">
+                        </div>
+                        <div class="alignForm">
+                          <p>Cidade</p>
+                          <input type="text" class="ipt" id="input_cidade_editar">
+                        </div>
+                        <div class="align">
+                          <div class="btnConfirmar" id="btnEdit" style="width: 100px; height: 35px; margin-top: 8px; cursor: pointer;"
+                            onclick="habilitarEdicao()">
+                            <p>Editar</p>
+                            </div>
+
+                            <div class="btnConfirmar" id="btnEnviar" style="display: none; width: 100px; height: 35px; margin-top: 8px; cursor: pointer;"
+                            onclick="enviarEdicao()">
+                            <p>Enviar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cadastroEmp" id="delEmp">
+                  <h1 class="titulo">Remover empresa</h1>
+                  <div class="alignForm">
+                    <p>Sua empresa:</p>
+                    <input type="text" class="ipt" id="input_nome_empresa_deletar">
+                  </div>
+                  <button class="btnConfirmar" style="width: 100px; height: 35px; margin-top: 8px; cursor: pointer;" onclick="removerEmpresa()">Remover</button>
+                </div>
+                <div class="cadastroEmp" id="delUser">
+                  <h1 class="titulo">Remover usuário</h1>
+                  <div class="alignForm">
+                    <p>Será removido:</p>
+                    <input type="text" class="ipt" id="input_nome_usuario_deletar">
+                  </div>
+                  <button class="btnConfirmar" style="width: 100px; height: 35px; margin-top: 8px; cursor: pointer;" onclick="removerUsuario()">Remover</button>
+                </div>
+            </div>
+                 
+            </div>
+           </div>
+        </div>
+     
+    </div>
+    <div class="close" id="closeIcon" onclick="closeMod()">   <nav id="nav" class="lateralNav">
+  </nav></div>
+  <div class="lateralDireita hidden" id="latDir">
+    <div class="formContent">
+        <label for="" class="informativo">Local de saida</label>
+        <input type="text" placeholder="Digite aqui">
+    </div>
+
+    <div class="formContent">
+        <label for="" class="informativo">Local de destino</label>
+        <input type="text" placeholder="Digite aqui">
+    </div>
+
+    <div class="formContent">
+        <label for="" class="informativo">Horário de partida</label>
+        <input type="text" placeholder="Digite aqui">
+    </div>
+
+    <div class="formContent">
+        <label for="" class="informativo">Previsâo de chegada</label>
+        <input type="text" placeholder="Digite aqui">
+    </div>
+
+    <div class="formContent">
+        <label for="" class="informativo">Media de passageiros</label>
+        <select name="" id="">
+            <option value="">Um</option>
+            <option value="">Um</option>
+            <option value="">Um</option>
+            <option value="">Um</option>
+        </select>
+    </div>
+
+    <div class="formContent">
+        <label for="" class="informativo">Aeroporto de saida</label>
+        <input type="text" placeholder="Digite aqui">
+    </div>
+    <div class="formContent">
+        <label for="" class="informativo">Deseja a ajuda de inteligencia artifical?</label>
+        <div class="formContentAlt">
+            <label for="" class="informativo">Sim
+                <input
+                type="checkbox"
+                id="subscribeNews"
+                name="subscribe"
+                value="newsletter" />
+            </label>
+            <label for="" class="informativo">Nâo
+                <input
+                type="checkbox"
+                id="subscribeNews"
+                name="subscribe"
+                value="newsletter" />
+            </label>
+     
+    </div>
+
+   
+ 
+    </div>
+    <div class="formContent">
+        <div class="btnConfirmar"><p>Confirmar</p></div>
+    </div>
+   
+
+</div>
+
+   
+</body>
+</html>
+
+<script>
+  var empresaUmCancelamentos;
+  var empresaUmNome;
+  var empresaDoisCancelamentos;
+  var empresaDoisNome;
+  var empresaTresCancelamentos;
+  var empresaTresNome;
+  var empresaQuatroCancelamentos;
+  var empresaQuatroNome;
+  var empresaCincoCancelamentos;
+  var empresaCincoNome;
+  var empresaSeisCancelamentos;
+  var empresaSeisNome;
+  var empresaUmAtrasos;
+  var empresaDoisAtrasos;
+  var empresaTresAtrasos;
+  var empresaQuatroAtrasos;
+  var empresaCincoAtrasos;
+  var empresaSeisAtrasos;
+  
+
+  var aeroportoUmCancelamentos;
+  var aeroportoUmNome;
+  var aeroportoDoisCancelamentos;
+  var aeroportoDoisNome;
+  var aeroportoTresCancelamentos;
+  var aeroportoTresNome;
+  var aeroportoQuatroCancelamentos;
+  var aeroportoQuatroNome;
+  var aeroportoCincoCancelamentos;
+  var aeroportoCincoNome;
+  var aeroportoSeisCancelamentos;
+  var aeroportoSeisNome;
+  var aeroportoUmAtrasos;
+  var aeroportoDoisAtrasos;
+  var aeroportoTresAtrasos;
+  var aeroportoQuatroAtrasos;
+  var aeroportoCincoAtrasos;
+  var aeroportoSeisAtrasos;
+  function puxarDadosKPIAero() {
+    
+    fetch("../dashboard/puxarDadosKPIAero", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        console.log('estou aqui');
+        
+  
+        if (resposta.ok) {
+      setTimeout(() => {
+        resposta.json().then(json => {
+          console.log(json);
+          console.log('atrasos aeroporto')
+          piorAeroporto.innerHTML = json[0].nomeAeroportoSaida.slice(0, 14)
+          dadosAeroporto.innerHTML = `${json[0].mediaCancelamentos.toFixed(1)}% de cancelamento`
+          piorEmpresa = json[0].empresaAerea
+          piorEmpresaDado = json[0].mediaCancelamentos
+
+          
+        })
+        
+          }, 500);
+ 
+        } else {
+          throw "Houve um erro ao trazer dados!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  
+    return false;
+  
+  }
+  function puxarDadosKPI() {
+    
+    fetch("../dashboard/puxarDadosKPI", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        console.log('estou aqui');
+        
+  
+        if (resposta.ok) {
+      setTimeout(() => {
+        resposta.json().then(json => {
+          console.log(json);
+          console.log('atrasos aeroporto')
+          piorEmpresa.innerHTML = json[0].empresaAerea.slice(0, 4)
+          dadosEmpresa.innerHTML = `${json[0].mediaCancelamentos.toFixed(1)}% de cancelamento`
+          piorEmpresa = json[0].empresaAerea
+          piorEmpresaDado = json[0].mediaCancelamentos
+
+          
+        })
+        
+          }, 500);
+ 
+        } else {
+          throw "Houve um erro ao trazer dados!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  
+    return false;
+  
+  }
+
+function atrasosAeroportos() {
+    
+    fetch("../dashboard/atrasosAeroporto", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        console.log('estou aqui');
+        
+  
+        if (resposta.ok) {
+      setTimeout(() => {
+        resposta.json().then(json => {
+          console.log(json);
+          console.log('atrasos aeroporto')
+          aeroportoUmAtrasos = json[0].mediaAtrasoSuperior30
+          aeroportoDoisAtrasos = json[1].mediaAtrasoSuperior30
+          aeroportoTresAtrasos = json[2].mediaAtrasoSuperior30
+          aeroportoQuatroAtrasos = json[3].mediaAtrasoSuperior30
+          aeroportoCincoAtrasos = json[4].mediaAtrasoSuperior30
+          aeroportoSeisAtrasos = json[5].mediaAtrasoSuperior30
+          
+        })
+        
+          }, 500);
+ 
+        } else {
+          throw "Houve um erro ao trazer dados!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  
+    return false;
+  
+  }
+  
+  function atrasosEmpresa() {
+    
+    fetch("../dashboard/atrasosEmpresa", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        console.log(resposta.empresaAerea)
+  
+        if (resposta.ok) {
+      setTimeout(() => {
+        resposta.json().then(json => {
+          console.log(json);
+          empresaUmAtrasos = json[0].mediaAtrasoSuperior30
+          empresaDoisAtrasos = json[1].mediaAtrasoSuperior30
+          empresaTresAtrasos = json[2].mediaAtrasoSuperior30
+          empresaQuatroAtrasos = json[3].mediaAtrasoSuperior30
+          empresaCincoAtrasos = json[4].mediaAtrasoSuperior30
+          empresaSeisAtrasos = json[5].mediaAtrasoSuperior30
+          
+        })
+        
+          }, 500);
+ 
+        } else {
+          throw "Houve um erro ao trazer dados!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  
+    return false;
+  
+  }
+  async function cancelamentosEmpresa() {
+    console.log("Entrei");
+    
+  try {
+    const resposta = await fetch("../dashboard/cancelamentosEmpresa", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+
+    // console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+      setTimeout(() => {
+        resposta.json().then(json => {
+          console.log(json);
+          empresaUmNome = json[0].empresaAerea
+          empresaUmCancelamentos = json[0].mediaCancelamentos
+          empresaDoisNome = json[1].empresaAerea
+          empresaDoisCancelamentos = json[1].mediaCancelamentos
+          empresaTresNome = json[2].empresaAerea
+          empresaTresCancelamentos = json[2].mediaCancelamentos
+          empresaQuatroNome = json[3].empresaAerea
+          empresaQuatroCancelamentos = json[3].mediaCancelamentos
+          empresaCincoNome = json[4].empresaAerea
+          empresaCincoCancelamentos = json[4].mediaCancelamentos
+          empresaSeisNome = json[5].empresaAerea
+          empresaSeisCancelamentos = json[5].mediaCancelamentos
+
+
+          console.log(empresaUmNome, empresaUmCancelamentos);
+          
+          
+        })
+        
+
+      }, 500); // O tempo é em milissegundos, então 2000 = 2 segundos
+    } else {
+      throw new Error("Houve um erro ao trazer dados!");
+    }
+  } catch (erro) {
+    console.log(`#ERRO: ${erro}`);
+  }
+
+  return false;
+}
+
+  function cancelamentosAeroporto() {
+    
+    fetch("../dashboard/cancelamentosAeroporto", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+  
+        if (resposta.ok) {
+      setTimeout(() => {
+        resposta.json().then(json => {
+          console.log(json);
+          aeroportoUmNome = json[0].nomeAeroportoSaida
+          aeroportoUmCancelamentos = json[0].mediaCancelamentos
+          aeroportoDoisNome = json[1].nomeAeroportoSaida
+          aeroportoDoisCancelamentos = json[1].mediaCancelamentos
+          aeroportoTresNome = json[2].nomeAeroportoSaida
+          aeroportoTresCancelamentos = json[2].mediaCancelamentos
+          aeroportoQuatroNome = json[3].nomeAeroportoSaida
+          aeroportoQuatroCancelamentos = json[3].mediaCancelamentos
+          aeroportoCincoNome = json[4].nomeAeroportoSaida
+          aeroportoCincoCancelamentos = json[4].mediaCancelamentos
+          aeroportoSeisNome = json[5].nomeAeroportoSaida
+          aeroportoSeisCancelamentos = json[5].mediaCancelamentos
+          
+        })
+        
+          }, 500);
+ 
+        } else {
+          throw "Houve um erro ao trazer dados!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  
+    return false;
+  
+  }
+
+  var isOpenEmp = false
+  var isOpenUser = false
+
+  function closeMod() {
+    var clos = document.getElementById('closeIcon')
+    clos.classList.toggle('active')
+  }
+  setInterval(() => {
+    var clos = document.getElementById('closeIcon')
+    if(clos.classList.value != 'close active')
+    clos.classList.toggle('notification')
+
+  }, 2000)
+
+  function empHidden(){
+    var caixaEmp = document.getElementById('empHidden')
+  !isOpenEmp ? mostrarModalCrud(1) : mostrarModalCrud(0)
+    caixaEmp.classList.toggle('dis')
+    if(caixaEmp.classList.value == "hidden"){
+   isOpenEmp = true
+
+    } else {
+   isOpenEmp = false
+
+
+    }
+
+
+  }
+
+  cancelamentosEmpresa()
+  cancelamentosAeroporto()
+  atrasosAeroportos()
+  atrasosEmpresa()
+  puxarDadosKPI()
+  puxarDadosKPIAero()
+
+
+
+    function userHidden(){
+!isOpenUser ? mostrarModalCrud(4) : mostrarModalCrud(0)
+
+    var caixaUser = document.getElementById('userHidden')
+    caixaUser.classList.toggle('dis')
+    if(caixaUser.classList.value == "hidden"){
+   isOpenUser = true
+
+    } else {
+   isOpenUser = false
+
+
+    }
+  }
+
+
+
+var contUm = document.getElementById('conteudoUm')
+var contQuatro = document.getElementById('conteudoQuatro')
+var contDois = document.getElementById('conteudoDois')
+var contEmpAdd = document.getElementById('cadEmp')
+var contEmpEdit = document.getElementById('editEmp')
+var contEmpDel = document.getElementById('delEmp')
+var contUserEdit = document.getElementById('editUser')
+var contUserDel = document.getElementById('delUser')  
+var contUm = document.getElementById('conteudoUm');
+var contDois = document.getElementById('conteudoDois');
+var contQuatro = document.getElementById('conteudoQuatro');
+var contCinco = document.getElementById('conteudoSeis');
+var botaoUm = document.getElementById('botaoUm')
+var botaoDois = document.getElementById('botaoDois')
+var botaoTres = document.getElementById('botaoTres')
+var botaoCinco = document.getElementById('botaoCinco')
+var botaaoSeis = document.getElementById('botaoSeis')
+isOpenEmp ? mostrarModalCrud(1) : mostrarModalCrud(0)
+function mostrarModalCrud(modal) {
+    // Oculta todos os modais
+    contEmpAdd.classList.add('dis')
+    contEmpEdit.classList.add('dis')
+    contEmpDel.classList.add('dis')
+    contUserDel.classList.add('dis')
+    contUserEdit.classList.add('dis')
+    if (modal === 1) {
+        contEmpAdd.classList.remove('dis');
+  }
+  if (modal === 2) {
+        contEmpEdit.classList.remove('dis');
+  }
+  if (modal === 3) {
+        contEmpDel.classList.remove('dis');
+  }
+  if (modal === 4) {
+        contUserEdit.classList.remove('dis');
+  }
+  if (modal === 5) {
+        contUserDel.classList.remove('dis');
+  }
+}
+
+mostrarModal(1)
+function mostrarModal(modal) {
+    // Oculta todos os modais
+    contUm.classList.add('dis');
+    contDois.classList.add('dis');
+    contQuatro.classList.add('dis');
+    contCinco.classList.add('dis');
+    botaoUm.classList.add('inactive');
+    botaoDois.classList.add('inactive');
+    botaoTres.classList.add('inactive');
+    botaoCinco.classList.add('inactive');
+    botaoSeis.classList.add('inactive');
+
+
+
+   
+    // Mostra apenas o modal escolhido
+    if (modal === 1) {
+        contUm.classList.remove('dis');
+        botaoUm.classList.remove('inactive');
+        const ctx = document.getElementById('myChart');
+    const ctxDois = document.getElementById('myChartDois');
+        
+setTimeout(() => {
+  new Chart(ctx, {
+  type: 'bar',
+ data: {
+  labels:  [empresaUmNome.slice(0, 5), empresaDoisNome.slice(0, 5), empresaTresNome.slice(0, 5), empresaQuatroNome.slice(0, 5), empresaCincoNome.slice(0, 5), empresaSeisNome.slice(0, 5)],
+  datasets: [
+    {
+      label: 'Cancelamentos',
+      data: [empresaUmCancelamentos, empresaDoisCancelamentos, empresaTresCancelamentos, empresaQuatroCancelamentos, empresaCincoCancelamentos, empresaSeisCancelamentos],
+      borderColor: 'red',
+      backgroundColor: 'red',
+    },
+    {
+      label: 'Atrasos',
+      data:  [empresaUmAtrasos, empresaDoisAtrasos, empresaTresAtrasos, empresaQuatroAtrasos, empresaCincoAtrasos, empresaSeisAtrasos],
+      borderColor: 'blue',
+      backgroundColor: 'blue',
+    }
+  ]
+}
+    });
+    
+
+new Chart(ctxDois, {
+  type: 'bar',
+ data: {
+  labels:  [aeroportoUmNome.slice(0, 5), aeroportoDoisNome.slice(0, 5), aeroportoTresNome.slice(0, 5), aeroportoQuatroNome.slice(0, 5), aeroportoCincoNome.slice(0, 5), aeroportoSeisNome.slice(0, 5)],
+  datasets: [
+    {
+      label: 'Cancelamentos',
+      data: [aeroportoUmCancelamentos, aeroportoDoisCancelamentos, aeroportoTresCancelamentos, aeroportoQuatroCancelamentos, aeroportoCincoCancelamentos, aeroportoSeisCancelamentos],
+      borderColor: 'red',
+      backgroundColor: 'red',
+    },
+    {
+      label: 'Atrasos',
+      data:  [aeroportoUmAtrasos, aeroportoDoisAtrasos, aeroportoTresAtrasos, aeroportoQuatroAtrasos, aeroportoCincoAtrasos, aeroportoSeisAtrasos],
+      borderColor: 'blue',
+      backgroundColor: 'blue',
+    }
+  ]
+}
+    });
+}, 1000)
+
+
+
+const ctxTres = document.getElementById('myChartTres');
+
+new Chart(ctxTres, {
+  type: 'bar',
+  data: {
+    labels: ['25/10', '26/10', '27/10', '28/10', '29/10', '30/10'],
+    datasets: [{
+      label: 'Temperatura São Paulo   13:30',
+      data: [12, 19, 22, 15, 12, 23],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+const ctxQuatro = document.getElementById('myChartQuatro');
+
+new Chart(ctxQuatro, {
+  type: 'doughnut',
+   data:{
+  labels: [
+    'Internet',
+    'Presencial',
+    'Aplicativo'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+   }
+});
+
+       
+    } else if (modal === 2) {
+        contDois.classList.remove('dis');
+        botaoDois.classList.remove('inactive');
+
+   
+
+
+    }
+  else if (modal === 3) {
+        botaoTres.classList.remove('inactive');}
+    else if (modal === 4) {
+        contQuatro.classList.remove('dis');
+    }
+    else if (modal === 5) {
+      botaoCinco.classList.remove('inactive');
+        contCinco.classList.remove('dis');
+    }
+}
+
+// Funções específicas para chamar o modal
+function modalUm() {
+    mostrarModal(1);
+}
+
+function modalDois() {
+    mostrarModal(2);
+}
+
+function modalTres() {
+    mostrarModal(3);
+}
+
+function modalQuatro() {
+    mostrarModal(4);
+}
+function modalCinco() {
+    mostrarModal(5);
+}
+function addEmp() {
+    mostrarModalCrud(1);
+    console.log('addEmp')
+
+}
+async function ediEmp() {
+    mostrarModalCrud(2);
+    console.log('ediEMp')
+
+}
+function delEmp() {
+    mostrarModalCrud(3);
+    console.log('delEMp')
+}
+function editUser() {
+    mostrarModalCrud(4);
+    console.log('ediUser')
+
+}
+function delUser() {
+    mostrarModalCrud(5);
+    console.log('delUser')
+
+}
+
+// const chaveApi = '61a63f60759671b91f52c72ecfa66019';
+//         const cidade = 'Amapa, BR';
+
+//         const traducoesTempo = {
+//             "clear sky": "céu limpo",
+//             "few clouds": "poucas nuvens",
+//             "scattered clouds": "nuvens dispersas",
+//             "broken clouds": "nuvens quebradas",
+//             "shower rain": "chuva rápida",
+//             "rain": "chuva",
+//             "thunderstorm": "tempestade",
+//             "snow": "neve",
+//             "mist": "neblina",
+//             "drizzle": "chuvisco",
+//             "light rain": "chuva leve",
+//             "overcast clouds": "nuvens cobertas",
+//         };
+
+     
+//         const obterPrevisao = () => {
+//             const urlPrevisao = `https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&appid=${chaveApi}&units=metric`;
+
+//             return fetch(urlPrevisao)
+//                 .then(resposta => {
+//                     if (!resposta.ok) {
+//                         throw new Error('Erro na requisição da previsão: ' + resposta.status);
+//                     }
+//                     return resposta.json();
+//                 });
+//         };
+
+
+//         const obterClimaAtual = () => {
+//             const urlClimaAtual = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${chaveApi}&units=metric`;
+
+//             return fetch(urlClimaAtual)
+//                 .then(resposta => {
+//                     if (!resposta.ok) {
+//                         throw new Error('Erro na requisição do clima atual: ' + resposta.status);
+//                     }
+//                     return resposta.json();
+//                 });
+//         };
+
+   
+//         Promise.all([obterPrevisao(), obterClimaAtual()])
+//             .then(([dadosPrevisao, dadosClimaAtual]) => {
+//                 let resultado = `<h2>Previsão do Tempo em ${cidade}</h2>`;
+//                 const previsoesDiarias = dadosPrevisao.list.filter(item => item.dt_txt.endsWith('15:00:00')).slice(0, 5);
+
+       
+//                 const visibilidade = dadosClimaAtual.visibility;
+
+//                 previsoesDiarias.forEach(dia => {
+//                     const data = new Date(dia.dt * 1000).toLocaleDateString();
+//                     const temperatura = dia.main.temp;
+//                     const descricaoTempo = dia.weather[0].description;
+//                     const descricaoTraduzida = traducoesTempo[descricaoTempo] || descricaoTempo;
+//                     const velocidadeVento = (dia.wind.speed * 3.6).toFixed(2);
+//                     const icone = dia.weather[0].icon;
+
+//                     resultado += `
+//                         <div>
+//                             <h4>${data}</h4>
+//                             <p>Temperatura: ${temperatura}°C</p>
+//                             <p>Condição: ${descricaoTraduzida}</p>
+//                             <p>Velocidade do Vento: ${velocidadeVento} km/h</p>
+//                             <p>Visibilidade: ${visibilidade} metros</p>
+//                             <img src="https://openweathermap.org/img/wn/${icone}.png" alt="Ícone do tempo">
+//                         </div>
+//                     `;
+//                 });
+
+//                 document.getElementById('divJ').innerHTML = resultado;
+//             })
+//             .catch(erro => {
+//                 console.error('Erro:', erro);
+//                 document.getElementById('divJ').innerHTML = 'Erro ao buscar dados do tempo.';
+//             });
+
+   
+</script>

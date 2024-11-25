@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styleCadastro.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloock&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloock&display=swap" rel="stylesheet">
+    <script>
+        async function enviarEmail() {
+            const email = document.getElementById('email').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+                alert(data.message);
+
+            } catch (error) {
+                console.error('Erro ao enviar o e-mail:', error);
+                alert('Erro ao enviar e-mail.');
+            }
+        }
+    </script>
+    </head>
+<body>
+    <div class="fundo">
+    </div>
+
+        <div class="container">
+            <div class="login"  id="logi">
+            <h1 class="titulo">Login</h1>
+            <div class="align">
+                <div class="alignForm">
+                    <p>E-mail</p>
+                    <input type="text" class="ipt" id="input_log_email">
+                </div>
+                <div class="alignForm">
+                    <p>Senha</p>
+                    <input type="password" class="ipt" id="input_log_senha">
+                    <a href="./redefinirSenha.html">Esqueci a senha</a>
+
+                </div>
+                <div class="align">
+                    <div class="btn" onclick="entrarLogin()"><p>Enviar</p></div>
+                    <p onclick="change()">Não possui uma conta?</p>
+                </div>
+            </div>
+        </div>
+            <div class="cadastro" id="cad">
+            <h1 class="titulo">Cadastro</h1>
+            <div class="align">
+                <div class="alignForm">
+                    <p>Nome</p>
+                    <input type="text" class="ipt" id="input_nome">
+                </div>
+                <div class="alignForm">
+                    <p>Tipo de conta</p>
+                    <select onchange="validatioType()" name="" id="id_tipo_conta" class="sel">
+                        <option value="funcionario">Funcionario</option>
+                        <option value="fiscal">Fiscal</option>
+                    </select>
+                </div>
+                <div id="inputEmp" class="alignForm">
+                    <p>Token de verificação da empresa</p>
+                    <input type="text" class="ipt" id="input_token">
+
+                  
+                </div>
+                <div class="alignForm">
+                    <p>E-mail</p>
+                    <input type="text" class="ipt" id="input_email">
+                </div>
+                <div class="alignForm">
+                    <p>Senha</p>
+                    <input type="password" class="ipt" id="input_senha">
+                </div>
+                <div class="alignForm">
+                    <p>Confirmar Senha</p>
+                    <input type="password" class="ipt" id="input_confirmar_senha">
+                </div>
+                <div class="align">
+                    <div class="btn" onclick="btnCadastro()"><p>Cadastrar</p></div>
+                    <div class="align" style="flex-direction: row;">
+                        <p  onclick="changeDois()">Ja tenho uma conta &nbsp; &nbsp; |</p>
+                   
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+            <div class="lado"></div>
+        </div>
+    
+</body>
+</html>
+<script>
+    cads = document.getElementById("cad")
+    login = document.getElementById("logi")
+    cadEmp = document.getElementById("cadEmp")
+    inputEmp = document.getElementById("inputEmp")
+    inputType = document.getElementById("id_tipo_conta")
+
+
+    console.log("oi")
+
+    function validatioType(){
+        if(inputType.value == 'fiscal'){
+            inputEmp.classList.add('dis')
+        } else {
+            inputEmp.classList.remove('dis')
+
+
+        }
+     
+        console.log(inputType.value)
+    }
+
+
+    function change() {
+        cads.style.left = "50%"
+        login.style.top = "150%"
+        console.log("um")
+  
+    }
+    function changeDois() {
+        cads.style.left = "150%"
+        login.style.top = "50%"
+        console.log("dois")
+  
+    }
+    function changeTres() {
+        cads.style.top = "-200%"
+        cadEmp.style.top = "50%"
+  
+    }
+    function changeReset() {
+        cads.style.top = "50%"
+        cadEmp.style.top = "150%"
+  
+    }
+
+
+</script>
+<script src="cadastro.js"></script>

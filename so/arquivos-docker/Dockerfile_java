@@ -1,0 +1,21 @@
+# Utiliza a imagem oficial do MySQL 8.0 como base
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y openjdk-21-jdk
+
+WORKDIR home/ubuntu/arquivos-docker/
+
+COPY ./scripts/executar_jar.sh /app/executar_jar.sh
+COPY ./projeto-vorteil-1.0-SNAPSHOT-jar-with-dependencies.jar /app/projeto-vorteil-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+
+RUN mkdir -p /app
+
+RUN chmod +x /app/executar_jar.sh
+
+WORKDIR /app
+
+VOLUME /app/logs:/home/ubuntu/logs
+
+
+CMD ["/app/executar_jar.sh"]
