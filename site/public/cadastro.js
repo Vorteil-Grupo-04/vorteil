@@ -124,7 +124,7 @@ function entrarLogin() {
               setTimeout(function () {
                 alert("login realizado com sucesso");
                 window.location = "Dashboard.html"
-              }, 1000);
+              }, 1000); 
           });
   
       } else {

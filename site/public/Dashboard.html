@@ -193,7 +193,7 @@
                   </div>
                   <div class="changeMode"  onclick="userHidden(), listarDadosUsuario()" style="border: 1px solid white;" ><p class="textoDefault">Usuário</p></div>
                   <div class="hidden dis" id="userHidden" style="width: 50%;">
-                     <div class="changeMode list" style="border: 1px solid white;"><p class="textoDefault" >Editar usuario</p></div>
+                     <div class="changeMode list" onclick="mostrarModalCrud(4)" style="border: 1px solid white;"><p class="textoDefault" >Editar usuário</p></div>
                   <div class="changeMode exclu"  onclick="delUser()" style="border: 1px solid white;"><p class="textoDefault">Remover usuário</p></div>
 
                   </div>
@@ -290,7 +290,7 @@
                   <button class="btnConfirmar" style="width: 100px; height: 35px; margin-top: 8px; cursor: pointer;" onclick="removerEmpresa()">Remover</button>
                 </div>
                 <div class="cadastroEmp" id="delUser">
-                  <h1 class="titulo">Remover usuário</h1>
+                  <h1 class="titulo">Remover seu usuário</h1>
                   <div class="alignForm">
                     <p>Será removido:</p>
                     <input type="text" class="ipt" id="input_nome_usuario_deletar">
@@ -917,7 +917,6 @@ function modalCinco() {
 function addEmp() {
     mostrarModalCrud(1);
     console.log('addEmp')
-
 }
 async function ediEmp() {
     mostrarModalCrud(2);
@@ -936,7 +935,6 @@ function editUser() {
 function delUser() {
     mostrarModalCrud(5);
     console.log('delUser')
-
 }
 
 // const chaveApi = '61a63f60759671b91f52c72ecfa66019';
